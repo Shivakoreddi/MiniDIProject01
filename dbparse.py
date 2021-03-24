@@ -9,7 +9,13 @@ def json_print(obj):
     text = json.dumps(obj,sort_keys=True,indent=4)
     print(text)
 
-obj= ap.respond()
+obj= ap.respond()['data']
 
 json_print(obj)
 
+ID = []
+for d in obj:
+    id = d['ID Year']
+    ID.append(id)
+
+print(ID)
