@@ -8,7 +8,20 @@ import requests as rq
 
 
 resp = rq.get('https://my-json-server.typicode.com/Shivakoreddi/apiServer01/db/')
-if resp.status_code==201:
+
+if resp.status_code==200:
     print("Success")
 else:
     print("Failed")
+##print(resp.status_code)
+##print(resp.json())
+
+def json_print(obj):
+    #create formated json data into object
+    text = json.dumps(obj,sort_keys=True,indent=4)
+    print(text)
+
+json_print(resp.json())
+
+
+    
