@@ -22,7 +22,7 @@ def json_print(obj):
     return text
 
 json_print(resp.json())
-print(json_print(resp.json()))
+
 
 
     
