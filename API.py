@@ -15,13 +15,5 @@ def respond():
 ##print(resp.status_code)
 ##print(resp.json())
 
-def json_print(obj):
-    #create formated json data into object
-    text = json.dumps(obj,sort_keys=True,indent=4)
-    return text
-
-json_print(resp.json())
-
-
 
     
