@@ -1,6 +1,7 @@
 ## API CoinMarketCap Data
 
 from requests import Request, Session
+import json
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
 ##resp = request.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest')
@@ -9,7 +10,7 @@ import json
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 parameters = {
   'start':'1',
-  'limit':'100',
+  'limit':'3000',
   'convert':'USD'
 }
 headers = {
@@ -25,6 +26,17 @@ session.headers.update(headers)
 def json_print():
     response = session.get(url,params=parameters)
     return response.json()
+
+#Serializing json data
+obj = json_print()
+json_obj = json.dumps(obj)
+
+#writing into json file
+with open("json files/coin_data.json","w") as file:
+    #file.write(json_obj)
+    json.dump(obj,file)
+
+
     
 
 
